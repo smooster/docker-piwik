@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
       zip \
  && rm -rf /var/lib/apt/lists/*
 
-RUN gpg --keyserver ha.pool.sks-keyservers.net:80 --recv-keys 0xb5dbd5925590a237
+RUN gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 0xb5dbd5925590a237
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr --with-png-dir=/usr --with-jpeg-dir=/usr \
  && docker-php-ext-install gd mbstring mysql pdo_mysql zip
